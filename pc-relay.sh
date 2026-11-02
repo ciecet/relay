@@ -1,5 +1,5 @@
 #!/bin/bash
-# mtun pc-relay: publish a local command as a relay socket.
+# relay pc-relay: publish a local command as a relay socket.
 #
 # Install this file as ~/bin/relay (or anywhere on PATH) on the PC.
 # It is NOT the server-side relay.sh; that one runs on the relay

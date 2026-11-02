@@ -1,5 +1,5 @@
 #!/bin/sh
-# mtun register: publish one socket for the relay account.
+# relay register: publish one socket for the relay account.
 #
 # Install this file as /home/relay/bin/register on the public server,
 # next to relay.sh. It is the forced command for the PC key only:

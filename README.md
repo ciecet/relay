@@ -1,6 +1,6 @@
-# mtun: persistent SSH relay for a single command
+# relay: persistent SSH relay for a single command
 
-mtun is a small, upterm-like relay system. An agent SSHes to a
+relay is a small, upterm-like relay system. An agent SSHes to a
 pre-shared account on a public server; on login, the connection is
 automatically tunnelled to a script on the user's machine, which
 bridges it to a user-specified command (a shell, an `adb shell`, a

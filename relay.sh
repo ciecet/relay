@@ -1,7 +1,7 @@
 #!/bin/sh
-# mtun relay: socket switch for the relay SSH account.
+# relay: socket switch for the relay SSH account.
 # (Relay, not connect: this script creates nothing itself, it only
-#  forwards Muse's stdin/stdout to a socket mtun already provides.)
+#  forwards Muse's stdin/stdout to a socket pc-relay already provides.)
 #
 # Intended use (public server side).
 # Install this file as /home/relay/bin/relay on the public server.
@@ -91,9 +91,9 @@
 # non-empty, non-comment line wins. Anything else is an error.
 #
 # Defaults (override with environment, only for testing):
-#   MTUN_CONNECTIONS_DIR : connection info directory, normally
+#   RELAY_CONNECTIONS_DIR : connection info directory, normally
 #                          $XDG_RUNTIME_DIR/relay
-#   MTUN_DEFAULT_NAME    : name used when no argument is given
+#   RELAY_DEFAULT_NAME    : name used when no argument is given
 #
 # Exit codes: 2 = bad name / bad info / XDG_RUNTIME_DIR unset,
 #             3 = connection info missing,
@@ -105,8 +105,8 @@ if [ -z "${XDG_RUNTIME_DIR:-}" ]; then
     printf 'relay: XDG_RUNTIME_DIR is not set\n' >&2
     exit 2
 fi
-CONNECTIONS_DIR="${MTUN_CONNECTIONS_DIR:-$XDG_RUNTIME_DIR/relay}"
-DEFAULT_NAME="${MTUN_DEFAULT_NAME:-default}"
+CONNECTIONS_DIR="${RELAY_CONNECTIONS_DIR:-$XDG_RUNTIME_DIR/relay}"
+DEFAULT_NAME="${RELAY_DEFAULT_NAME:-default}"
 
 die() {
     printf 'relay: %s\n' "$*" >&2
